@@ -22,9 +22,8 @@ if __name__ == '__main__':
     args = args_parser()
     path_dict = {'B': pathlib.Path('/kaggle/input/fl-mrcm-sample/sample MRI/BraTS'),
                  'F': pathlib.Path('/kaggle/input/fl-mrcm-sample/sample MRI/fastMRI'),
-                 'H': pathlib.Path('Dataset dir H'),
                  'I': pathlib.Path('/kaggle/input/fl-mrcm-sample/sample MRI/IXI')}
-    rate_dict = {'B': 1.0,'F': 1.0,'H': 1.0, 'I': 1.0} # control the sample rate for each dataset
+    rate_dict = {'B': 1.0,'F': 1.0,'I': 1.0} # control the sample rate for each dataset
 
     args.device = torch.device('cuda:{}'.format(args.gpu[0]) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
     if not os.path.exists(args.save_dir):
